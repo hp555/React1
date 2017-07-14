@@ -30,6 +30,9 @@ const styles = {
   radioButton: {
     marginBottom: 16,
   },
+
+  color: 'green',
+  fontWeight: 'bold'
 };
 
 
@@ -39,14 +42,22 @@ constructor(props){
 super(props);
 this.state = {
 value:0,
+Value:4
 
  };
+ this.onChange=this.onChange.bind(this),
 this.handleChange=this.handleChange.bind(this)
  }
 
  handleChange(event,index,value){
  this.setState({
  value
+ });
+ }
+
+ onChange(even,index,value){
+ this.setState({
+ Value
  });
  }
 
@@ -57,11 +68,20 @@ render() {
 }
     return (
     <MuiThemeProvider>
+
+
       <div>
         <AppBar
-          title={"Welcome to the Online Application Form"}
+          style={styles}
+          title={
+          <font size="6.5">Welcome to the Online Application Form</font> }
           onTitleTouchTap={handleTouchTap}
-          iconElementRight={<RaisedButton label ="SEARCH"/>}
+          iconElementRight={
+          <div>        
+          <RaisedButton key={1} label ="SEARCH"/>
+          <RaisedButton key={2} label="HOME"/>
+          <RaisedButton key={3} label="LOG OUT"/>
+          </div>}
          />
 
           <Tabs>
@@ -108,14 +128,14 @@ render() {
 
             Blood group:<br/>
             <SelectField
-            value={this.state.value}
-            onchange={this.handleChange}
+            value={this.state.Value}
+            onchange={this.onChange}
             >
-            <MenuItem value={4} primaryText="No Selection"/>
-            <MenuItem value={5} primaryText="B+"/>
-            <MenuItem value={6} primaryText="O+"/>
-            <MenuItem value={7} primaryText="O-"/>
-            <MenuItem value={8} primaryText="Others"/>
+            <MenuItem Value={4} primaryText="No Selection"/>
+            <MenuItem Value={5} primaryText="B+"/>
+            <MenuItem Value={6} primaryText="O+"/>
+            <MenuItem Value={7} primaryText="O-"/>
+            <MenuItem Value={8} primaryText="Others"/>
             </SelectField><br/>
 
 
@@ -163,8 +183,8 @@ render() {
           <label>
           10th Marks:<br/>
           <input type ="text" name="name"/><br/>
-          12th Marks:<br/>
-          <input type="text" name="name"/><br/>
+        12th Marks:<br/>
+        <input type="text" name="name"/><br/>
           <br/>
           University Name :
           <select>
@@ -191,7 +211,27 @@ render() {
           </Tab>
           <Tab label="Preview">
           </Tab>
-          <Tab label="Payment">
+          <Tab label="Payment"><br/>
+          <div style={styles}>Payment Information</div>
+          <div>
+          <form>
+          <label>
+          <br/>
+          Credit Cards Accepted:<br/>
+        <select>
+        <option value="VISA">VISA</option>
+        <option value="MASTER">MASTER</option>
+        <option value="AMEX">AMEX</option>
+        <option value="OTHERS">OTHERS</option>
+        </select><br/>
+
+        <span>
+        Card Number:
+        <input type="number" name="name"/>
+        </span>
+          </label>
+          </form>
+          </div>
           </Tab>
           </Tabs>
 
