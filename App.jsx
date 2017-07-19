@@ -77,7 +77,7 @@ render() {
           <font size="6.5">Welcome to the Online Application Form</font> }
           onTitleTouchTap={handleTouchTap}
           iconElementRight={
-          <div>        
+          <div>
           <RaisedButton key={1} label ="SEARCH"/>
           <RaisedButton key={2} label="HOME"/>
           <RaisedButton key={3} label="LOG OUT"/>
@@ -88,7 +88,9 @@ render() {
           <Tab label="Personal Details">
           <form>
           <label>
-          <br/>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div>
+
           First Name:<br/>
             <input type="text" name="name"/><br/>
 
@@ -170,48 +172,107 @@ render() {
     <input type="numeric" name="name"/><br/>
     E-Mail:<br/>
     <input type="text" name="name"/><br/>
-
-
-          </label><br/>
-
+<br/>
           <input type="submit" value="Submit"/>
+          </div>
+          </div>
+            </label><br/>
+
           </form>
           </Tab>
 
           <Tab label="Academic Details">
           <form>
           <label>
-          10th Marks:<br/>
-          <input type ="text" name="name"/><br/>
-        12th Marks:<br/>
-        <input type="text" name="name"/><br/>
-          <br/>
-          University Name :
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div>
+          Year Of Passing Class 10th or Equivalent:<br/>
           <select>
-           <option selected value="No Selection">No Selection</option>
-           <option  value="IIT's">IIT's</option>
-           <option  value="Delhi University">Delhi University</option>
-           <option  value="NIT's">NIT's</option>
-           <option  value="Others, Please Specify">Others, Please Specify</option>
-           </select><br/>
-            Other University Name: <input type="text" name="name"/><br/><br/>
-          Graduation Marks<br/>
-          <input type="text" name="name"/><br/>
+          <option selected value="--SELECT--">--SELECT--</option>
+          <option value="2015">2015</option>
+          <option value="2013">2014</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+          </select>
+          <br/><br/>
+          Select Board Of Class 12th Qualifying Examination:<br/>
+          <select>
+          <option selected value="--SELECT--">--SELECT--</option>
+          <option value="C.B.S.E">C.B.S.E</option>
+          <option value="I.C.S.E">I.C.S.E</option>
+          <option value="American Board">American Board</option>
+          <option value="State Board,Specify ">State Board, Specify</option>
+          </select><br/>
+
+          If State Board Specify:<br/>
+          <select>
+          <option value="Uttar Pradesh">U.P</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Bihar">Bihar</option>
+          <option value="South Indian">South Indian</option>
+          <option value="J&K">J&K</option>
+          <option value="North Eastern">North Eastern</option>
+          <option value="West Bengal">West Bengal</option>
+          <option value="others">others</option>
+          </select><br/>
           <br/>
+
+         Place of class 12th/Qualifying Examination Schooling:<br/>
+         <input type="text" name="name"/><br/><br/>
+
+         Type Of institution of class 12th:<br/>
+         <select>
+         <option selected value="--Select--">--Select--</option>
+         <option value="Government">Government</option>
+         <option value="Public">Public</option>
+         <option value="Kendriya Vidyalay">Kendriya Vidhyalay</option>
+         <option value="Others">Others</option>
+         </select>
+         <br/><br/>
+
+         Percentage of marks in class 12th/Qualifying Examination:<br/>
+         <input type="number" number="number"/><br/><br/>
+
+         Roll number of class 12th(if allotted):<br/>
+         <input type ="number" numeric="numeric"/><br/><br/>
+
+         Name of school/college from where passed/appearing:<br/>
+         <input type="text" name="name"/><br/>
+         <br/>
+
+         Address of school/college from where passed/appearing:<br/>
+         <input type="text" address="address"/><br/><br/>
           <input type="submit" value="submit"/>
+          </div>
+          </div>
 
           </label>
           </form>
 
 
           </Tab>
-          <Tab label="Entrance Exam Details">
+          <Tab label="Examination passed details">
+          <form>
+          <label>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div>
+          Appearing Examination After 10+2:<br/>
+          <input type="text" exam="exam"/>
+
+          </div>
+          </div>
+          </label>
+          </form>
           </Tab>
+
           <Tab label="Program Choice">
           </Tab>
           <Tab label="Preview">
           </Tab>
           <Tab label="Payment"><br/>
+
           <div style={styles}>Payment Information</div>
           <div>
           <form>
@@ -229,6 +290,7 @@ render() {
         Card Number:
         <input type="number" name="name"/>
         </span>
+
           </label>
           </form>
           </div>
